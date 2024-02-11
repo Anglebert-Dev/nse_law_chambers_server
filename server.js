@@ -12,6 +12,10 @@ app.use(cors());
 // Parse JSON requests
 app.use(express.json());
 
+app.get("/",(req,res)=>{
+    res.status(200).json("welcome to my server")
+})
+
 app.post("/send-email", async (req, res) => {
   const { name, email, subject, message } = req.body;
 
